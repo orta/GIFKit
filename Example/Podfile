@@ -1,5 +1,6 @@
 target 'GIFKit', :exclusive => true do
   pod "GIFKit", :path => "../"
+  pod "FLAnimatedImage", :git => "https://github.com/geoffmacd/FLAnimatedImage.git"
 end
 
 target 'Tests', :exclusive => true do

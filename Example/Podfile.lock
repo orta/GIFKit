@@ -1,0 +1,48 @@
+PODS:
+  - AFNetworking (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.3.1)
+  - AFNetworking/Security (2.3.1)
+  - AFNetworking/Serialization (2.3.1)
+  - AFNetworking/UIKit (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Expecta (0.3.0)
+  - FLAnimatedImage (1.0.0)
+  - GIFKit (0.1.0):
+    - AFNetworking (~> 2.3)
+  - Specta (0.2.1)
+
+DEPENDENCIES:
+  - Expecta
+  - FLAnimatedImage (from `https://github.com/geoffmacd/FLAnimatedImage.git`)
+  - GIFKit (from `../`)
+  - Specta (~> 0.2.1)
+
+EXTERNAL SOURCES:
+  FLAnimatedImage:
+    :git: https://github.com/geoffmacd/FLAnimatedImage.git
+  GIFKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  Expecta: ce8a51b9fad15a2cd573b291cb2909aaed865350
+  FLAnimatedImage: e2853e19cc0364065379ef81bade08f0bd7b3859
+  GIFKit: 0af4426b49aea25799a119291c02cdd96d950239
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+
+COCOAPODS: 0.33.1

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ORViewController : UIViewController
+@interface ORViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end

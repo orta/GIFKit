@@ -1,0 +1,1 @@
+PODS_GIFKIT_FLANIMATEDIMAGE_OTHER_LDFLAGS = -framework CoreGraphics -framework ImageIO -framework MobileCoreServices -framework QuartzCore
