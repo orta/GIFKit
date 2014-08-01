@@ -6,6 +6,13 @@
 //  Copyright (c) 2013 Orta Therox. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
+#elif TARGET_OS_MAC
+@import Quartz;
+#endif
+
+
 #import "GIF.h"
 
 @interface GIF()
@@ -28,7 +35,6 @@
     if (thumbnailURL.length == 0) {
         if ([downloadURL rangeOfString:@"imgur"].location != NSNotFound) {
             thumbnailURL = [downloadURL stringByReplacingOccurrencesOfString:@".gif" withString:@"b.jpg"];
-
 
         } else {
             // ergh, this would take a while
@@ -82,7 +88,6 @@
 #define ORGIFDateAddedKey      @"ORGIFDateAddedKey"
 #define ORGIFSourceKey         @"ORGIFSourceKey"
 
-
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:_thumbnailAddress forKey:ORGIFThumbnailKey];
@@ -110,11 +115,11 @@
 
 - (NSString *)imageRepresentationType
 {
-#ifndef TARGET_OS_IPHONE
-    #import <QuartzCore/QuartzCore.h>
+#if TARGET_OS_IPHONE
+    return @"GIF";
+#elif TARGET_OS_MAC
     return IKImageBrowserNSURLRepresentationType;
 #endif
-    return @"GIF";
 }
 
 - (id) imageRepresentation
