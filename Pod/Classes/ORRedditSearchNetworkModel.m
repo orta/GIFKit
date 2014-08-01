@@ -22,7 +22,6 @@
 
 @implementation ORRedditSearchNetworkModel
 
-
 - (void)setSearchQuery:(NSString *)query
 {
     _query = [query stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
@@ -36,10 +35,9 @@
     if (self.downloading) return;
 
     NSString *address = nil;
-    address = [NSString stringWithFormat:@"http://www.reddit.com/search.json?q=%@+url:*.gif&sort=relevance&t=all&restrict_sr=off&count=25", _query];
-    if (_redditToken) {
-        address = [address stringByAppendingFormat:@"&after=%@", _redditToken];
-    }
+    NSString *restrictResults = (self.filterResults) ? @"" : @"&restrict_sr=off";
+    NSString *token = (self.redditToken) ? [@"&after=" stringByAppendingString:self.redditToken] : @"";
+    address = [NSString stringWithFormat:@"http://www.reddit.com/search.json?q=%@+url:*.gif&sort=relevance&t=all%@&count=25%@", _query, restrictResults, token];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {

@@ -11,6 +11,8 @@
 
 @interface ORRedditSearchNetworkModel : NSObject <ORGIFSource>
 
+@property (nonatomic, assign, readwrite) BOOL filterResults;
+
 - (void)setSearchQuery:(NSString *)query;
 
 @end
