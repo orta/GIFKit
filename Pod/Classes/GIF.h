@@ -10,7 +10,7 @@
 
 @interface GIF : NSObject <NSCoding>
 
-- (instancetype)initWithDownloadURL:(NSString *)downloadURL thumbnail:(NSString *)thumbnail andSource:(NSString *)source;
+- (instancetype)initWithDownloadURL:(NSString *)downloadAddresss thumbnail:(NSString *)thumbnailAddress source:(NSString *)sourceAddress sourceTitle:(NSString *)sourceTitle;
 
 - (NSString *)imageUID;
 - (NSString *)imageRepresentationType;
@@ -19,6 +19,8 @@
 - (NSURL *)downloadURL;
 - (NSURL *)sourceURL;
 
+@property (nonatomic, copy, readonly) NSString *sourceTitle;
 @property (nonatomic, readonly) NSDate *dateAdded;
+@property (nonatomic, assign, readonly) BOOL adultContent;
 
 @end

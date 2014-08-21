@@ -36,7 +36,8 @@
 
     NSString *address = nil;
     NSString *restrictResults = (self.filterResults) ? @"" : @"&restrict_sr=off";
-    NSString *token = (self.redditToken) ? [@"&after=" stringByAppendingString:self.redditToken] : @"";
+    NSString *redditToken = self.redditToken;
+    NSString *token = [redditToken isKindOfClass:[NSString class]] ? [@"&after=" stringByAppendingString:self.redditToken] : @"";
     address = [NSString stringWithFormat:@"http://www.reddit.com/search.json?q=%@+url:*.gif&sort=relevance&t=all%@&count=25%@", _query, restrictResults, token];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
