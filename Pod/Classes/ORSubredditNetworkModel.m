@@ -35,9 +35,11 @@
     if (_downloading) return;
     
     NSString *address = self.address;
-    if (self.token) {
+    if (self.token && (id)self.token != [NSNull null]) {
         address = [address stringByAppendingFormat:@"?after=%@", self.token];
     }
+
+    if (!self || !address) return;
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:address parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
