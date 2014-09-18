@@ -9,14 +9,13 @@
 
 Pod::Spec.new do |s|
   s.name             = "GIFKit"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "The source for finding GIFs."
   s.description      = <<-DESC
-                        Built out of a never-released in two years GIF app. The searching framework for finding GIFs on Reddit or Tumblr.
+                        Built out of a never-released in two years GIF app. The searching framework for finding GIFs on Reddit, Tumblr and Giphy.
                        DESC
 
   s.homepage         = "https://github.com/orta/GIFKit"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Orta Therox" => "orta.therox@gmail.com" }
   s.source           = { :git => "https://github.com/orta/GIFKit.git", :tag => s.version.to_s }
