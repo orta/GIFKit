@@ -32,6 +32,7 @@
     }
 
     downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@"http://imgur.com/" withString:@"http://imgur.com/download/"];
+    downloadURL = [downloadURL stringByReplacingOccurrencesOfString:@".gifv" withString:@".gif"];
 
     // http://imgur.com/download/a/1iZuu -> http://i.imgur.com/3r3yeIz.gif
 
